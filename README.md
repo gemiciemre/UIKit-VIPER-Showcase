@@ -29,12 +29,14 @@ Each feature in the app is divided into the following layers:
   Defines the data models used by the Interactor.  
 
 - **Router**  
-  Manages navigation and module creation.  
-  
-  View <–> Presenter <–> Interactor
+  Manages navigation and module creation.
+``` 
+View <–> Presenter <–> Interactor
 ↑                           ↓
 └──────────── Router ───────┘
 (Entities provide data models)
+ ``` 
+
 
 ## 🚀 Features
 - Product listing module
@@ -44,6 +46,7 @@ Each feature in the app is divided into the following layers:
 
 ## 📂 Project Structure
 
+ ``` 
 UIKit-VIPER-Showcase
 │── Modules
 │   └── Product
@@ -56,7 +59,7 @@ UIKit-VIPER-Showcase
 │── Supporting Files
 
 ---
-
+ ``` 
 ## ⚡ Getting Started
 
 ### Prerequisites
