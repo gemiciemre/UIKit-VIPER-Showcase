@@ -30,7 +30,6 @@ class ProductDetailViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .systemBackground
-        setupConstraints()
         setupProductImageView()
         setupLabels()
         setupAddToCartButton()
@@ -88,6 +87,7 @@ extension ProductDetailViewController {
         productImageView.clipsToBounds = true
         productImageView.layer.cornerRadius = 12
         productImageView.backgroundColor = .systemGray6
+        productImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(productImageView)
     }
     

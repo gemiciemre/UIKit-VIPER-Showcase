@@ -16,7 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = DependencyContainer.shared.resolveProductListViewController()
+        let productListVC = DependencyContainer.shared.resolveProductListViewController()
+        let navigationController = UINavigationController(rootViewController: productListVC)
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
     }
