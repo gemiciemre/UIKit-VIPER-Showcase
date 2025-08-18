@@ -16,9 +16,82 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
+        
+        // Create tab bar controller
+        let tabBarController = UITabBarController()
+        
+        // Configure tab bar appearance
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = .systemBackground
+        
+        // First Tab - Product List
         let productListVC = DependencyContainer.shared.resolveProductListViewController()
-        let navigationController = UINavigationController(rootViewController: productListVC)
-        window.rootViewController = navigationController
+        let productListNav = UINavigationController(rootViewController: productListVC)
+        productListNav.tabBarItem = UITabBarItem(
+            title: "Products",
+            image: UIImage(systemName: "list.bullet"),
+            selectedImage: UIImage(systemName: "list.bullet")
+        )
+        
+        // Second Tab - Cart
+        let cartNav = CartRouter.createCartModule()
+        cartNav.tabBarItem = UITabBarItem(
+            title: "Sepetim",
+            image: UIImage(systemName: "cart"),
+            selectedImage: UIImage(systemName: "cart.fill")
+        )
+        
+        // Third Tab - Favorites (Placeholder for now)
+        let favoritesVC = UIViewController()
+        favoritesVC.view.backgroundColor = .systemBackground
+        favoritesVC.title = "Favorites"
+        let favoritesNav = UINavigationController(rootViewController: favoritesVC)
+        favoritesNav.tabBarItem = UITabBarItem(
+            title: "Favorites",
+            image: UIImage(systemName: "heart"),
+            selectedImage: UIImage(systemName: "heart.fill")
+        )
+        
+        // Fourth Tab - Profile (Placeholder for now)
+        let profileVC = UIViewController()
+        profileVC.view.backgroundColor = .systemBackground
+        profileVC.title = "Profile"
+        let profileNav = UINavigationController(rootViewController: profileVC)
+        profileNav.tabBarItem = UITabBarItem(
+            title: "Profile",
+            image: UIImage(systemName: "person"),
+            selectedImage: UIImage(systemName: "person.fill")
+        )
+        
+        // Configure tab bar appearance
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+
+        // Apply the appearance to tab bar
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+            UITabBar.appearance().standardAppearance = appearance
+        } else {
+            UITabBar.appearance().standardAppearance = appearance
+        }
+        
+        // Customize tab bar items
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [.font: UIFont.systemFont(ofSize: 12, weight: .semibold)],
+            for: .normal
+        )
+        
+        // Set tint colors
+        UITabBar.appearance().tintColor = .systemBlue
+        UITabBar.appearance().unselectedItemTintColor = .systemGray
+        
+        // Set view controllers
+        tabBarController.viewControllers = [productListNav,cartNav, favoritesNav, profileNav]
+        
+        // Make tab bar controller the root
+        window.rootViewController = tabBarController
         self.window = window
         window.makeKeyAndVisible()
     }

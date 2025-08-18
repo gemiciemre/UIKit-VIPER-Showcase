@@ -15,12 +15,15 @@ struct Product: Codable, Equatable {
     }
 }
 
-// MARK: - Extensions
+// MARK: - Currency Formatting
 extension Double {
-    var currencyFormatted: String {
+    func formatAsTurkishLira() -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "tr_TR")
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        
         return formatter.string(from: NSNumber(value: self)) ?? "\(self) ₺"
     }
 }

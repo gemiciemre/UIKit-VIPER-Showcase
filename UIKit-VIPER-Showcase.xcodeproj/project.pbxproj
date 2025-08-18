@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5ABE19A2E53B3570041DC5B /* CartViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1992E53B3570041DC5B /* CartViewProtocol.swift */; };
+		C5ABE19D2E53B3E10041DC5B /* CartViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE19C2E53B3E10041DC5B /* CartViewEntity.swift */; };
+		C5ABE19F2E53B4AF0041DC5B /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE19E2E53B4AF0041DC5B /* CartInteractor.swift */; };
+		C5ABE1A12E53B4FE0041DC5B /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1A02E53B4FE0041DC5B /* CartPresenter.swift */; };
+		C5ABE1A32E53B5520041DC5B /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1A22E53B5520041DC5B /* CartRouter.swift */; };
+		C5ABE1A52E53B6310041DC5B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1A42E53B6310041DC5B /* CartViewController.swift */; };
+		C5ABE1A82E53B6C30041DC5B /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1A72E53B6C30041DC5B /* CartItemCell.swift */; };
+		C5ABE1AB2E53B7EC0041DC5B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C5ABE1AA2E53B7EC0041DC5B /* SnapKit */; };
+		C5ABE1AE2E53C4BE0041DC5B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1AD2E53C4BE0041DC5B /* ProductCell.swift */; };
+		C5ABE1B02E53C8A20041DC5B /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ABE1AF2E53C8A20041DC5B /* Cart.swift */; };
 		C5E1779F2E50810300A180A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E177952E50810300A180A7 /* AppDelegate.swift */; };
 		C5E177A02E50810300A180A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E1779C2E50810300A180A7 /* SceneDelegate.swift */; };
 		C5E177A22E50810300A180A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E177962E50810300A180A7 /* Assets.xcassets */; };
@@ -54,6 +64,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5ABE1992E53B3570041DC5B /* CartViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewProtocol.swift; sourceTree = "<group>"; };
+		C5ABE19C2E53B3E10041DC5B /* CartViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewEntity.swift; sourceTree = "<group>"; };
+		C5ABE19E2E53B4AF0041DC5B /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		C5ABE1A02E53B4FE0041DC5B /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		C5ABE1A22E53B5520041DC5B /* CartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRouter.swift; sourceTree = "<group>"; };
+		C5ABE1A42E53B6310041DC5B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		C5ABE1A72E53B6C30041DC5B /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		C5ABE1AD2E53C4BE0041DC5B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		C5ABE1AF2E53C8A20041DC5B /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		C5E177452E50666C00A180A7 /* UIKit-VIPER-Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-VIPER-Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E1775B2E50666D00A180A7 /* UIKit-VIPER-ShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-VIPER-ShowcaseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E177652E50666D00A180A7 /* UIKit-VIPER-ShowcaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit-VIPER-ShowcaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5ABE1AB2E53B7EC0041DC5B /* SnapKit in Frameworks */,
 				C5E177E42E52020800A180A7 /* Kingfisher in Frameworks */,
 				C5E177CF2E51E89000A180A7 /* Swinject in Frameworks */,
 			);
@@ -125,6 +145,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5ABE1932E53B2F80041DC5B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE19E2E53B4AF0041DC5B /* CartInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C5ABE1942E53B2F80041DC5B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1A02E53B4FE0041DC5B /* CartPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C5ABE1962E53B2F80041DC5B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1A22E53B5520041DC5B /* CartRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C5ABE1972E53B2F80041DC5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1A42E53B6310041DC5B /* CartViewController.swift */,
+				C5ABE1A62E53B6B30041DC5B /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5ABE1982E53B2F80041DC5B /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1992E53B3570041DC5B /* CartViewProtocol.swift */,
+				C5ABE19B2E53B37F0041DC5B /* Entity */,
+				C5ABE1932E53B2F80041DC5B /* Interactor */,
+				C5ABE1942E53B2F80041DC5B /* Presenter */,
+				C5ABE1962E53B2F80041DC5B /* Router */,
+				C5ABE1972E53B2F80041DC5B /* View */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		C5ABE19B2E53B37F0041DC5B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1AF2E53C8A20041DC5B /* Cart.swift */,
+				C5ABE19C2E53B3E10041DC5B /* CartViewEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C5ABE1A62E53B6B30041DC5B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1A72E53B6C30041DC5B /* CartItemCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C5ABE1AC2E53C4A10041DC5B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C5ABE1AD2E53C4BE0041DC5B /* ProductCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C5E1773C2E50666C00A180A7 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +300,7 @@
 		C5E177A82E50812900A180A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5ABE1AC2E53C4A10041DC5B /* Components */,
 				C5E177B12E50816700A180A7 /* ProductListViewController.swift */,
 			);
 			path = View;
@@ -342,6 +434,7 @@
 			children = (
 				C5E177942E50810300A180A7 /* ProductList */,
 				C5E177DB2E51F46F00A180A7 /* ProductDetail */,
+				C5ABE1982E53B2F80041DC5B /* Cart */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -365,6 +458,7 @@
 			packageProductDependencies = (
 				C5E177CE2E51E89000A180A7 /* Swinject */,
 				C5E177E32E52020800A180A7 /* Kingfisher */,
+				C5ABE1AA2E53B7EC0041DC5B /* SnapKit */,
 			);
 			productName = "UIKit-VIPER-Showcase";
 			productReference = C5E177452E50666C00A180A7 /* UIKit-VIPER-Showcase.app */;
@@ -451,6 +545,7 @@
 			packageReferences = (
 				C5E177CD2E51E89000A180A7 /* XCRemoteSwiftPackageReference "Swinject" */,
 				C5E177E22E52020800A180A7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C5ABE1A92E53B7EC0041DC5B /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C5E177462E50666C00A180A7 /* Products */;
@@ -498,8 +593,12 @@
 			files = (
 				C5E1779F2E50810300A180A7 /* AppDelegate.swift in Sources */,
 				C5E177B42E5081C300A180A7 /* ProductListRouter.swift in Sources */,
+				C5ABE1B02E53C8A20041DC5B /* Cart.swift in Sources */,
+				C5ABE1A32E53B5520041DC5B /* CartRouter.swift in Sources */,
 				C5E177E12E51F73200A180A7 /* ProductDetailProtocols.swift in Sources */,
 				C5E177A02E50810300A180A7 /* SceneDelegate.swift in Sources */,
+				C5ABE1A82E53B6C30041DC5B /* CartItemCell.swift in Sources */,
+				C5ABE1A12E53B4FE0041DC5B /* CartPresenter.swift in Sources */,
 				C5E177C82E51C92100A180A7 /* ProductDTO.swift in Sources */,
 				C5E177C42E51C8A600A180A7 /* ProductServiceProtocol.swift in Sources */,
 				C5E177C22E51C77B00A180A7 /* Endpoint.swift in Sources */,
@@ -507,15 +606,20 @@
 				C5E177B62E51C2A300A180A7 /* ProductListModule.swift in Sources */,
 				C5E177BE2E51C6FE00A180A7 /* NetworkManager.swift in Sources */,
 				C5E177CC2E51CA2C00A180A7 /* ProductEndpoint.swift in Sources */,
+				C5ABE19F2E53B4AF0041DC5B /* CartInteractor.swift in Sources */,
 				C5E177B02E50815F00A180A7 /* ProductListPresenter.swift in Sources */,
 				C5E177AE2E50815700A180A7 /* ProductListInteractor.swift in Sources */,
+				C5ABE1A52E53B6310041DC5B /* CartViewController.swift in Sources */,
 				C5E177DE2E51F4AD00A180A7 /* ProductDetailViewController.swift in Sources */,
 				C5E177AC2E50814F00A180A7 /* ProductListEntity.swift in Sources */,
 				C5E177C02E51C73200A180A7 /* NetworkError.swift in Sources */,
 				C5E177D62E51EBCB00A180A7 /* DependencyContainer.swift in Sources */,
+				C5ABE19D2E53B3E10041DC5B /* CartViewEntity.swift in Sources */,
 				C5E177B22E50816700A180A7 /* ProductListViewController.swift in Sources */,
 				C5E177E72E52033800A180A7 /* ProductDetailRouter.swift in Sources */,
+				C5ABE19A2E53B3570041DC5B /* CartViewProtocol.swift in Sources */,
 				C5E177AA2E50814600A180A7 /* ProductListProtocols.swift in Sources */,
+				C5ABE1AE2E53C4BE0041DC5B /* ProductCell.swift in Sources */,
 				C5E177EB2E5206FF00A180A7 /* ProductDetailPresenter.swift in Sources */,
 				C5E177C62E51C8EE00A180A7 /* ProductService.swift in Sources */,
 			);
@@ -863,6 +967,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C5ABE1A92E53B7EC0041DC5B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		C5E177CD2E51E89000A180A7 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -882,6 +994,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C5ABE1AA2E53B7EC0041DC5B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5ABE1A92E53B7EC0041DC5B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		C5E177CE2E51E89000A180A7 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C5E177CD2E51E89000A180A7 /* XCRemoteSwiftPackageReference "Swinject" */;

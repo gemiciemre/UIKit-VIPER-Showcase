@@ -44,10 +44,13 @@ extension ProductDetailViewController: ProductDetailViewProtocol {
         priceLabel.text = "\(product.price) ₺"
         descriptionLabel.text = product.description
         
+        let config = UIImage.SymbolConfiguration(pointSize: 80, weight: .light)
+        let placeholderImage = UIImage(systemName: "photo", withConfiguration: config)?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)
+        
         if let imageURL = URL(string: product.imageURL) {
             productImageView.kf.setImage(
                 with: imageURL,
-                placeholder: UIImage(systemName: "photo"),
+                placeholder: placeholderImage,
                 options: [
                     .transition(.fade(0.3)),
                     .cacheOriginalImage

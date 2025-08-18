@@ -7,6 +7,11 @@ final class ProductListInteractor: ProductListInteractorInputProtocol {
     
     init(productService: ProductServiceProtocol = ProductService()) {
         self.productService = productService
+        setupCartObserver()
+    }
+    
+    deinit {
+        Cart.shared.removeCartUpdateObserver(self)
     }
     
     func fetchProducts() {
@@ -15,20 +20,31 @@ final class ProductListInteractor: ProductListInteractorInputProtocol {
                 switch result {
                 case .success(let productsDTO):
                     self?.products = productsDTO.map { $0.toDomain() }
-                    self?.presenter?.productsFetched(products: self?.products ?? [])
+                    self?.presenter?.productsFetched(self?.products ?? [])
                 case .failure(let error):
-                    self?.presenter?.productsFetchFailed(error: error)
+                    self?.presenter?.productsFetchFailed(error)
                 }
             }
         }
     }
     
-    func refreshProducts() {
-        fetchProducts()
+    func addToCart(_ product: Product) {
+        Cart.shared.addToCart(product)
     }
     
-    func getProduct(at index: Int) -> Product? {
-        guard index >= 0 && index < products.count else { return nil }
-        return products[index]
+    func removeFromCart(_ product: Product) {
+        Cart.shared.removeFromCart(product)
+    }
+    
+    func isProductInCart(_ product: Product) -> Bool {
+        return Cart.shared.isProductInCart(product)
+    }
+    
+    private func setupCartObserver() {
+        Cart.shared.addCartUpdateObserver(self, selector: #selector(cartDidUpdate))
+    }
+    
+    @objc private func cartDidUpdate() {
+        presenter?.cartUpdated()
     }
 }

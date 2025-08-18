@@ -20,6 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: productListViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        // Configure navigation bar appearance
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+        
+        // Extend background to the edges
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.standardAppearance = appearance
+        navigationBarAppearance.scrollEdgeAppearance = appearance
+        navigationBarAppearance.compactAppearance = appearance
+        navigationBarAppearance.compactScrollEdgeAppearance = appearance
+        
         return true
     }
 
