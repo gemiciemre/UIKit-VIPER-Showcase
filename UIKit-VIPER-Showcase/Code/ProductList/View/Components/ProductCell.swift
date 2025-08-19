@@ -110,7 +110,7 @@ final class ProductCell: UITableViewCell {
         self.cartButtonAction = cartButtonAction
         
         nameLabel.text = product.name
-        priceLabel.text = product.price.formatAsTurkishLira()
+        priceLabel.text = "\(product.price) ₺" //product.price.formatAsTurkishLira()
         
         if let imageURL = URL(string: product.imageURL) {
             productImageView.kf.setImage(with: imageURL, placeholder: UIImage(named: "placeholder"))

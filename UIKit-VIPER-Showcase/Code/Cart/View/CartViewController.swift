@@ -122,7 +122,7 @@ class CartViewController: UIViewController, CartViewProtocol {
     }
     
     func updateCartTotal(price: Double, itemCount: Int) {
-        totalLabel.text = "Toplam: \(price.formatAsTurkishLira())"
+        totalLabel.text = "Toplam: \(price) ₺"
         itemCountLabel.text = "\(itemCount) ürün"
         
         // Update tab bar badge

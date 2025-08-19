@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let productListViewController = ProductListRouter.createProductListModule()
-        let navigationController = UINavigationController(rootViewController: productListViewController)
-        window?.rootViewController = navigationController
+        window?.rootViewController = productListViewController
         window?.makeKeyAndVisible()
         
         // Configure navigation bar appearance
